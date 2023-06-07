@@ -1,0 +1,392 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbStokTakipModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TABLE_ADMIN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KULLANICIAD" Type="varchar" MaxLength="20" />
+    <Property Name="SIFRE" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="TABLE_BANKA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BANKA" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TABLE_DEPARTMAN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DEPARTMAN_AD" Type="varchar" MaxLength="50" />
+    <Property Name="ACIKLAMA" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <EntityType Name="TABLE_FATURABILGI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SERI" Type="char" MaxLength="1" />
+    <Property Name="SIRANO" Type="varchar" MaxLength="6" />
+    <Property Name="TARIH" Type="smalldatetime" />
+    <Property Name="SAAT" Type="char" MaxLength="5" />
+    <Property Name="VERGIDAIRE" Type="varchar" MaxLength="50" />
+    <Property Name="MUSTERI" Type="int" />
+    <Property Name="SORUMLU" Type="int" />
+  </EntityType>
+  <EntityType Name="TABLE_FATURADETAY">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="URUN" Type="varchar" MaxLength="50" />
+    <Property Name="ADET" Type="int" />
+    <Property Name="FIYAT" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TUTAR" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="FATURAID" Type="int" />
+  </EntityType>
+  <EntityType Name="TABLE_KATEGORI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KATEGORI_AD" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TABLE_MARKA">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MARKA_AD" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TABLE_MUSTERI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MUSTERI_AD" Type="varchar" MaxLength="30" />
+    <Property Name="MUSTERI_SOYAD" Type="varchar" MaxLength="30" />
+    <Property Name="TELEFON" Type="varchar" MaxLength="20" />
+    <Property Name="MAIL" Type="varchar" MaxLength="50" />
+    <Property Name="SEHIR" Type="int" />
+    <Property Name="BANKA" Type="int" />
+    <Property Name="VERGI_DAIRESI" Type="varchar" MaxLength="50" />
+    <Property Name="VERGI_NO" Type="varchar" MaxLength="50" />
+    <Property Name="ADRES" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="TABLE_NOTLAR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BASLIK" Type="varchar" MaxLength="50" />
+    <Property Name="ICERIK" Type="varchar" MaxLength="500" />
+    <Property Name="DURUM" Type="bit" />
+    <Property Name="TARIH" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TABLE_OZELLIKLER">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OZELLIKLER" Type="varchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="TABLE_SEHIR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SEHIR" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="TABLE_SORUMLU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SORUMLU_AD" Type="varchar" MaxLength="30" />
+    <Property Name="SORUMLU_SOYAD" Type="varchar" MaxLength="30" />
+    <Property Name="DEPARTMAN" Type="int" />
+    <Property Name="FOTOGRAF" Type="varchar" MaxLength="100" />
+    <Property Name="MAIL" Type="varchar" MaxLength="50" />
+    <Property Name="TELEFON" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="TABLE_URUN">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="URUN_MODEL" Type="varchar" MaxLength="50" />
+    <Property Name="MARKA" Type="int" />
+    <Property Name="ALIS_FIYAT" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SATIS_FIYAT" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="STOK" Type="int" />
+    <Property Name="KATEGORI" Type="int" />
+    <Property Name="DURUM" Type="bit" />
+    <Property Name="OZELLIK" Type="int" />
+  </EntityType>
+  <EntityType Name="TABLE_URUNHAREKET">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="URUN" Type="int" />
+    <Property Name="MUSTERI" Type="int" />
+    <Property Name="SORUMLU" Type="int" />
+    <Property Name="TARIH" Type="smalldatetime" />
+    <Property Name="ADET" Type="int" />
+    <Property Name="FIYAT" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SERINO" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <Association Name="FK_TABLE_FATURABILGI_TABLE_MUSTERI">
+    <End Role="TABLE_MUSTERI" Type="Self.TABLE_MUSTERI" Multiplicity="0..1" />
+    <End Role="TABLE_FATURABILGI" Type="Self.TABLE_FATURABILGI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TABLE_MUSTERI">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TABLE_FATURABILGI">
+        <PropertyRef Name="MUSTERI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TABLE_FATURABILGI_TABLE_SORUMLU">
+    <End Role="TABLE_SORUMLU" Type="Self.TABLE_SORUMLU" Multiplicity="0..1" />
+    <End Role="TABLE_FATURABILGI" Type="Self.TABLE_FATURABILGI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TABLE_SORUMLU">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TABLE_FATURABILGI">
+        <PropertyRef Name="SORUMLU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TABLE_FATURADETAY_TABLE_FATURABILGI">
+    <End Role="TABLE_FATURABILGI" Type="Self.TABLE_FATURABILGI" Multiplicity="0..1" />
+    <End Role="TABLE_FATURADETAY" Type="Self.TABLE_FATURADETAY" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TABLE_FATURABILGI">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TABLE_FATURADETAY">
+        <PropertyRef Name="FATURAID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TABLE_MUSTERI_TABLE_BANKA">
+    <End Role="TABLE_BANKA" Type="Self.TABLE_BANKA" Multiplicity="0..1" />
+    <End Role="TABLE_MUSTERI" Type="Self.TABLE_MUSTERI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TABLE_BANKA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TABLE_MUSTERI">
+        <PropertyRef Name="BANKA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TABLE_MUSTERI_TABLE_SEHIR">
+    <End Role="TABLE_SEHIR" Type="Self.TABLE_SEHIR" Multiplicity="0..1" />
+    <End Role="TABLE_MUSTERI" Type="Self.TABLE_MUSTERI" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TABLE_SEHIR">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TABLE_MUSTERI">
+        <PropertyRef Name="SEHIR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TABLE_SORUMLU_TABLE_DEPARTMAN">
+    <End Role="TABLE_DEPARTMAN" Type="Self.TABLE_DEPARTMAN" Multiplicity="0..1" />
+    <End Role="TABLE_SORUMLU" Type="Self.TABLE_SORUMLU" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TABLE_DEPARTMAN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TABLE_SORUMLU">
+        <PropertyRef Name="DEPARTMAN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TABLE_URUN_TABLE_KATEGORI">
+    <End Role="TABLE_KATEGORI" Type="Self.TABLE_KATEGORI" Multiplicity="0..1" />
+    <End Role="TABLE_URUN" Type="Self.TABLE_URUN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TABLE_KATEGORI">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TABLE_URUN">
+        <PropertyRef Name="KATEGORI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TABLE_URUN_TABLE_MARKA">
+    <End Role="TABLE_MARKA" Type="Self.TABLE_MARKA" Multiplicity="0..1" />
+    <End Role="TABLE_URUN" Type="Self.TABLE_URUN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TABLE_MARKA">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TABLE_URUN">
+        <PropertyRef Name="MARKA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TABLE_URUN_TABLE_OZELLIKLER">
+    <End Role="TABLE_OZELLIKLER" Type="Self.TABLE_OZELLIKLER" Multiplicity="0..1" />
+    <End Role="TABLE_URUN" Type="Self.TABLE_URUN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TABLE_OZELLIKLER">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TABLE_URUN">
+        <PropertyRef Name="OZELLIK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TABLE_URUNHAREKET_TABLE_MUSTERI">
+    <End Role="TABLE_MUSTERI" Type="Self.TABLE_MUSTERI" Multiplicity="0..1" />
+    <End Role="TABLE_URUNHAREKET" Type="Self.TABLE_URUNHAREKET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TABLE_MUSTERI">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TABLE_URUNHAREKET">
+        <PropertyRef Name="MUSTERI" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TABLE_URUNHAREKET_TABLE_SORUMLU">
+    <End Role="TABLE_SORUMLU" Type="Self.TABLE_SORUMLU" Multiplicity="0..1" />
+    <End Role="TABLE_URUNHAREKET" Type="Self.TABLE_URUNHAREKET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TABLE_SORUMLU">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TABLE_URUNHAREKET">
+        <PropertyRef Name="SORUMLU" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TABLE_URUNHAREKET_TABLE_URUN">
+    <End Role="TABLE_URUN" Type="Self.TABLE_URUN" Multiplicity="0..1" />
+    <End Role="TABLE_URUNHAREKET" Type="Self.TABLE_URUNHAREKET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TABLE_URUN">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TABLE_URUNHAREKET">
+        <PropertyRef Name="URUN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="DbStokTakipModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TABLE_ADMIN" EntityType="Self.TABLE_ADMIN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TABLE_BANKA" EntityType="Self.TABLE_BANKA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TABLE_DEPARTMAN" EntityType="Self.TABLE_DEPARTMAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TABLE_FATURABILGI" EntityType="Self.TABLE_FATURABILGI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TABLE_FATURADETAY" EntityType="Self.TABLE_FATURADETAY" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TABLE_KATEGORI" EntityType="Self.TABLE_KATEGORI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TABLE_MARKA" EntityType="Self.TABLE_MARKA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TABLE_MUSTERI" EntityType="Self.TABLE_MUSTERI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TABLE_NOTLAR" EntityType="Self.TABLE_NOTLAR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TABLE_OZELLIKLER" EntityType="Self.TABLE_OZELLIKLER" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TABLE_SEHIR" EntityType="Self.TABLE_SEHIR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TABLE_SORUMLU" EntityType="Self.TABLE_SORUMLU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TABLE_URUN" EntityType="Self.TABLE_URUN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TABLE_URUNHAREKET" EntityType="Self.TABLE_URUNHAREKET" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_TABLE_FATURABILGI_TABLE_MUSTERI" Association="Self.FK_TABLE_FATURABILGI_TABLE_MUSTERI">
+      <End Role="TABLE_MUSTERI" EntitySet="TABLE_MUSTERI" />
+      <End Role="TABLE_FATURABILGI" EntitySet="TABLE_FATURABILGI" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TABLE_FATURABILGI_TABLE_SORUMLU" Association="Self.FK_TABLE_FATURABILGI_TABLE_SORUMLU">
+      <End Role="TABLE_SORUMLU" EntitySet="TABLE_SORUMLU" />
+      <End Role="TABLE_FATURABILGI" EntitySet="TABLE_FATURABILGI" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TABLE_FATURADETAY_TABLE_FATURABILGI" Association="Self.FK_TABLE_FATURADETAY_TABLE_FATURABILGI">
+      <End Role="TABLE_FATURABILGI" EntitySet="TABLE_FATURABILGI" />
+      <End Role="TABLE_FATURADETAY" EntitySet="TABLE_FATURADETAY" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TABLE_MUSTERI_TABLE_BANKA" Association="Self.FK_TABLE_MUSTERI_TABLE_BANKA">
+      <End Role="TABLE_BANKA" EntitySet="TABLE_BANKA" />
+      <End Role="TABLE_MUSTERI" EntitySet="TABLE_MUSTERI" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TABLE_MUSTERI_TABLE_SEHIR" Association="Self.FK_TABLE_MUSTERI_TABLE_SEHIR">
+      <End Role="TABLE_SEHIR" EntitySet="TABLE_SEHIR" />
+      <End Role="TABLE_MUSTERI" EntitySet="TABLE_MUSTERI" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TABLE_SORUMLU_TABLE_DEPARTMAN" Association="Self.FK_TABLE_SORUMLU_TABLE_DEPARTMAN">
+      <End Role="TABLE_DEPARTMAN" EntitySet="TABLE_DEPARTMAN" />
+      <End Role="TABLE_SORUMLU" EntitySet="TABLE_SORUMLU" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TABLE_URUN_TABLE_KATEGORI" Association="Self.FK_TABLE_URUN_TABLE_KATEGORI">
+      <End Role="TABLE_KATEGORI" EntitySet="TABLE_KATEGORI" />
+      <End Role="TABLE_URUN" EntitySet="TABLE_URUN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TABLE_URUN_TABLE_MARKA" Association="Self.FK_TABLE_URUN_TABLE_MARKA">
+      <End Role="TABLE_MARKA" EntitySet="TABLE_MARKA" />
+      <End Role="TABLE_URUN" EntitySet="TABLE_URUN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TABLE_URUN_TABLE_OZELLIKLER" Association="Self.FK_TABLE_URUN_TABLE_OZELLIKLER">
+      <End Role="TABLE_OZELLIKLER" EntitySet="TABLE_OZELLIKLER" />
+      <End Role="TABLE_URUN" EntitySet="TABLE_URUN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TABLE_URUNHAREKET_TABLE_MUSTERI" Association="Self.FK_TABLE_URUNHAREKET_TABLE_MUSTERI">
+      <End Role="TABLE_MUSTERI" EntitySet="TABLE_MUSTERI" />
+      <End Role="TABLE_URUNHAREKET" EntitySet="TABLE_URUNHAREKET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TABLE_URUNHAREKET_TABLE_SORUMLU" Association="Self.FK_TABLE_URUNHAREKET_TABLE_SORUMLU">
+      <End Role="TABLE_SORUMLU" EntitySet="TABLE_SORUMLU" />
+      <End Role="TABLE_URUNHAREKET" EntitySet="TABLE_URUNHAREKET" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TABLE_URUNHAREKET_TABLE_URUN" Association="Self.FK_TABLE_URUNHAREKET_TABLE_URUN">
+      <End Role="TABLE_URUN" EntitySet="TABLE_URUN" />
+      <End Role="TABLE_URUNHAREKET" EntitySet="TABLE_URUNHAREKET" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

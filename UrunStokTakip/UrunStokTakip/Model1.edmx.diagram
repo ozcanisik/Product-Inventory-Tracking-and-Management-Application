@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b752cf507fed4e40a14c0739b340dfa6" Name="Diagram1" ZoomLevel="109">
+        <EntityTypeShape EntityType="DbStokTakipModel.sysdiagrams" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbStokTakipModel.TABLE_ADMIN" Width="1.5" PointX="7.5" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbStokTakipModel.TABLE_BANKA" Width="1.5" PointX="0.625" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbStokTakipModel.TABLE_DEPARTMAN" Width="1.5" PointX="9.625" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbStokTakipModel.TABLE_FATURABILGI" Width="1.5" PointX="11.875" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbStokTakipModel.TABLE_FATURADETAY" Width="1.5" PointX="9.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbStokTakipModel.TABLE_KATEGORI" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbStokTakipModel.TABLE_MARKA" Width="1.5" PointX="0.625" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbStokTakipModel.TABLE_MUSTERI" Width="1.5" PointX="7.25" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbStokTakipModel.TABLE_NOTLAR" Width="1.5" PointX="7.5" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbStokTakipModel.TABLE_OZELLIKLER" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbStokTakipModel.TABLE_SEHIR" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbStokTakipModel.TABLE_SORUMLU" Width="1.5" PointX="11.875" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbStokTakipModel.TABLE_URUN" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbStokTakipModel.TABLE_URUNHAREKET" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
+        <AssociationConnector Association="DbStokTakipModel.FK_TABLE_MUSTERI_TABLE_BANKA" ManuallyRouted="false" />
+        <AssociationConnector Association="DbStokTakipModel.FK_TABLE_SORUMLU_TABLE_DEPARTMAN" ManuallyRouted="false" />
+        <AssociationConnector Association="DbStokTakipModel.FK_TABLE_FATURABILGI_TABLE_MUSTERI" ManuallyRouted="false" />
+        <AssociationConnector Association="DbStokTakipModel.FK_TABLE_FATURABILGI_TABLE_SORUMLU" ManuallyRouted="false" />
+        <AssociationConnector Association="DbStokTakipModel.FK_TABLE_FATURADETAY_TABLE_FATURABILGI" ManuallyRouted="false" />
+        <AssociationConnector Association="DbStokTakipModel.FK_TABLE_URUN_TABLE_KATEGORI" ManuallyRouted="false" />
+        <AssociationConnector Association="DbStokTakipModel.FK_TABLE_URUN_TABLE_MARKA" ManuallyRouted="false" />
+        <AssociationConnector Association="DbStokTakipModel.FK_TABLE_MUSTERI_TABLE_SEHIR" ManuallyRouted="false" />
+        <AssociationConnector Association="DbStokTakipModel.FK_TABLE_URUNHAREKET_TABLE_MUSTERI" ManuallyRouted="false" />
+        <AssociationConnector Association="DbStokTakipModel.FK_TABLE_URUN_TABLE_OZELLIKLER" ManuallyRouted="false" />
+        <AssociationConnector Association="DbStokTakipModel.FK_TABLE_URUNHAREKET_TABLE_SORUMLU" ManuallyRouted="false" />
+        <AssociationConnector Association="DbStokTakipModel.FK_TABLE_URUNHAREKET_TABLE_URUN" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
