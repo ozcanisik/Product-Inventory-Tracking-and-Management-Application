@@ -1,5 +1,5 @@
 # Resources
-## İmages and Icons
+## İmages, Icons and Gifs
 
 https://www.freepik.com/  
 https://icons8.com/app/windows  
