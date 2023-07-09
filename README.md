@@ -8,4 +8,10 @@ Technologies used in the project: Devexpress, Entity Framework(Database First Ap
 
 ### Login Panel
 ![login](./Screenshots/giris.png "Login")
+### Homepage
+![homepage](./Screenshots/anasayfa.png "Homepage")
+### Login Panel
+![login](./Screenshots/giris.png "Login")
+### Login Panel
+![login](./Screenshots/giris.png "Login")
 
