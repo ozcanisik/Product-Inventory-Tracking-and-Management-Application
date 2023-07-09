@@ -7,11 +7,11 @@ https://github.com/ozcanisik/Product-Inventory-Tracking-and-Management-Applicati
 Technologies used in the project: Devexpress, Entity Framework(Database First Approach), C#, .NET, MS SQL
 
 ### Login Panel
-![login](./Screenshots/giris.png "Login")
+![login](./Screenshots/login.png "Login")
 ### Homepage
-![homepage](./Screenshots/anasayfa.png "Homepage")
-### Login Panel
-![login](./Screenshots/giris.png "Login")
-### Login Panel
-![login](./Screenshots/giris.png "Login")
+![homepage](./Screenshots/homepage.png "Homepage")
+### Product Management
+![product](./Screenshots/product.png "Product Management")
+### Add Product
+![new-product](./Screenshots/newproduct.png "New Product")
 
