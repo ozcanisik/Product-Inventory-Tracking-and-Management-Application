@@ -8,7 +8,6 @@ Technologies used in the project: Devexpress, Entity Framework(Database First Ap
 
 ## Screenshots
 Below you can see some screenshots of the app. If you would like to see the app in more detail, please watch the short video above.
----
 
 ### Login Panel
 ![login](./Screenshots/login.png "Login")
